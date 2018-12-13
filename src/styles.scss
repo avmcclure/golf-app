@@ -1,0 +1,44 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.content {
+  padding: 8px;
+}
+
+.scorecard {
+  border: 2px solid black;
+  box-sizing: border-box;
+  height: 300px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: (100%/3) (100%/3) (100%/3);
+}
+
+.score-box {
+  border: 2px solid black;
+  grid-row: 3;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+}
+
+.score {
+  font-size: 3rem;
+  @include flexCenter();
+  height: 100%;
+}
+
+.hole {
+  border-bottom: 4px solid black;
+  flex: 0 0 20%;
+  @include flexCenter();
+}
