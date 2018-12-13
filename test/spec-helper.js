@@ -1,14 +1,14 @@
-import Chance from 'chance';
 import chai from 'chai';
 import sinon from 'sinon';
 import sinonChai from 'sinon-chai';
 import dirtyChai from 'dirty-chai';
+import {chance} from './chance-mixins';
 
 chai.use(sinonChai);
 chai.use(dirtyChai);
 
 global.stub = sinon.stub;
-global.chance = new Chance();
+global.chance = chance;
 global.expect = chai.expect;
 
 process.on('unhandledRejection', e => {

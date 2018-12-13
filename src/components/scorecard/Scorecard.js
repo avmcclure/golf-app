@@ -1,17 +1,25 @@
-import React, { Component } from 'react';
-import Scores from './scores/Scores';
-import scoreStore from 'Stores/ScoreStore';
+import React from 'react';
+import Scores from './scores/hole-scores';
+import Course from './course';
+import Player from './player';
+import { scorecardType, playerType, courseType } from 'Types';
 
-class Scorecard extends Component {
-  state = { editable: false };
+import 'Styles/scorecard.scss';
 
-  render() {
-    return (
-      <div className="scorecard">
-        <Scores scoreStore={scoreStore} />
-      </div>
-    );
-  }
+Scorecard.propTypes = {
+  scorecard: scorecardType,
+  player: playerType,
+  course: courseType
+};
+
+function Scorecard({ scorecard, player, course }) {
+  return (
+    <div className="scorecard">
+      <Player {...player}/>
+      <Course {...course}/>
+      <Scores scorecard={scorecard}/>
+    </div> 
+  );
 }
 
 export default Scorecard;

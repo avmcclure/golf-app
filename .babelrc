@@ -1,8 +1,6 @@
 {
   "presets": ["@babel/react", "@babel/env"],
   "plugins": [
-    ["@babel/plugin-proposal-decorators", { "legacy": true }],
-    ["@babel/plugin-proposal-class-properties", { "loose": true }],
     [
       "module-resolver",
       {
@@ -11,9 +9,10 @@
           "Test": "./test",
           "Styles": "./src/styles",
           "Img": "./assets/img",
-          "Assets": "./assets",
           "Components": "./src/components",
-          "Stores": "./src/stores"
+          "Constants": "./src/constants",
+          "Utils": "./src/utils",
+          "Types": "./src/types"
         }
       }
     ]

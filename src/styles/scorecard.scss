@@ -1,0 +1,92 @@
+@import 'mixins';
+
+@mixin left-align {
+  .label {
+    padding-left: 1rem;
+    @include flex-left();
+  }
+
+  .value {
+    padding-left: 1rem;
+    @include flex-left();
+  }
+}
+
+@mixin center-align {
+  .label {
+    @include flex-center();
+  }
+
+  .value {
+    @include flex-center();
+  }
+}
+
+.scorecard {
+  border: 2px solid black;
+  box-sizing: border-box;
+  height: 300px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-rows: (100%/3) (100%/3) (100%/3);
+
+  span {
+    padding-left: 1rem;
+  }
+
+  .box {
+    overflow: hidden;
+    border: 2px solid black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+
+    .label {
+      border-bottom: 2px solid black;
+      flex: 0 0 30%;
+      font-size: 1.5rem;
+      width: 100%;
+    }
+
+    .value {
+      font-size: 3rem;
+      height: 100%;
+    } 
+  }
+
+  .score {
+    grid-row-start: 3;
+    
+    @include center-align();
+  }
+
+  .player-id {
+    border: 2px solid black;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    
+    @include left-align();
+  }
+  
+  .player-name {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 7;
+
+    @include left-align();
+  }
+
+  .course {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 9;
+
+    @include left-align();
+  }
+}
+

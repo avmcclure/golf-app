@@ -1,9 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { courseType } from 'Types';
+import Box from './box';
 
-class Course extends Component {
-  render() {
-    return <div className="course">{'Tower Tee'}</div>;
-  }
+Course.propTypes = courseType;
+
+function Course(props) {
+  const { name } = props;
+  return (
+    <Box className="course" label={'Course'}>
+      {name}
+    </Box>
+  );
 }
 
 export default Course;

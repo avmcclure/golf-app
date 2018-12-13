@@ -9,7 +9,7 @@ export default class ScoreInput extends Component {
     };
   }
 
-  handleOnChange = ({ value }) => {};
+  handleOnChange = ({ value }) => {  };
 
   render() {
     const score = this.props.score;

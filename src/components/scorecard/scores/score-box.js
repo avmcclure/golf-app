@@ -1,4 +1,10 @@
 import React from 'react';
+import propTypes from 'prop-types';
+
+ScoreBox.propTypes = {
+  hole: propTypes.number,
+  children: propTypes.children
+}
 
 function ScoreBox(props) {
   return (
