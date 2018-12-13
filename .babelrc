@@ -1,0 +1,21 @@
+{
+  "presets": ["@babel/react", "@babel/env"],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    [
+      "module-resolver",
+      {
+        "root": ["./src"],
+        "alias": {
+          "Test": "./test",
+          "Styles": "./src/styles",
+          "Img": "./assets/img",
+          "Assets": "./assets",
+          "Components": "./src/components",
+          "Stores": "./src/stores"
+        }
+      }
+    ]
+  ]
+}
